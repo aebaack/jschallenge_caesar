@@ -26,11 +26,28 @@ function encodeLetter(char) {
 }
 
 function decodeString(encodedStr) {
-
+  return encodedStr
+    .split('')
+    .reduce((decodedStr, encodedChar) => {
+      if (encodedChar.match(/[A-z]/)) {
+        return decodedStr + decodeLetter(encodedChar);
+      } else {
+        return decodedStr + encodedChar;
+      }
+    }, '');
 }
 
 function decodeLetter(char) {
-  
+  switch (char) {
+    case 'A' || 'a':
+      return char === 'A' ? 'X' : 'x';
+    case 'B' || 'b':
+      return char === 'B' ? 'Y' : 'y';
+    case 'C' || 'c':
+      return char === 'C' ? 'Z' : 'z';
+    default:
+      return String.fromCharCode(char.charCodeAt() - 3);
+  }
 }
 
 module.exports = {
