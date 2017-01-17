@@ -14,11 +14,14 @@ function encodeString(plainStr) {
 
 function encodeLetter(char) {
   switch (char) {
-    case 'X' || 'x':
+    case 'X':
+    case 'x':
       return char === 'X' ? 'A' : 'a';
-    case 'Y' || 'y':
+    case 'Y':
+    case 'y':
       return char === 'Y' ? 'B' : 'b';
-    case 'Z' || 'z':
+    case 'Z':
+    case 'z':
       return char === 'Z' ? 'C' : 'c';
     default:
       return String.fromCharCode(char.charCodeAt() + 3);
@@ -39,11 +42,14 @@ function decodeString(encodedStr) {
 
 function decodeLetter(char) {
   switch (char) {
-    case 'A' || 'a':
+    case 'A':
+    case 'a':
       return char === 'A' ? 'X' : 'x';
-    case 'B' || 'b':
+    case 'B':
+    case 'b':
       return char === 'B' ? 'Y' : 'y';
-    case 'C' || 'c':
+    case 'C':
+    case 'c':
       return char === 'C' ? 'Z' : 'z';
     default:
       return String.fromCharCode(char.charCodeAt() - 3);

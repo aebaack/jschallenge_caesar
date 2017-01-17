@@ -9,4 +9,8 @@ describe('Decoder',function(){
         expect(caesar.decode('Yhql, ylgl, ylfl.')).to.equal('Veni, vidi, vici.');
         expect(caesar.decode('Dohd ldfwd hvw.')).to.equal('Alea iacta est.');
     });
+    it('Should Decode A Correctly', function(){
+        expect(caesar.decode('A')).to.equal('X');
+        expect(caesar.decode('a')).to.equal('x');
+    });
 });
